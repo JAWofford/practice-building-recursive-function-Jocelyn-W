@@ -8,9 +8,11 @@ function reverseString (stringInput){
         
         if(stringInput.length <=1){
               return stringInput;//Base Case: return the string itself if it contains only one character (or is blank).
-        } return stringInput.slice(-1) + reverseString(stringInput.slice(0,-1));//the last letter of the string + everything but the last letter.  This should decrease each recursion.
+        } return stringInput.slice(-1) + reverseString(stringInput.slice(0,-1));//the last letter of the string + everything but the last letter being passed as an argument.  This should decrease each recursion.
 }
 
 let word = readlineSync.question('Please enter a word:  ');
 console.log(`Here is ${word} in reverse: ${reverseString(word)}`);
 
+//Notes:  I wanted so badly to just use .split, .reverse and .join.
+//This ended up cleaner than I thought after many false starts.
